@@ -293,7 +293,7 @@ public class JShell {
             String lastErrorMessage = getErrorHandler().errorToMessage(th);
             context.setLastResult(new JShellResult(errorCode, lastErrorMessage, th));
             if (errorCode != 0) {
-                getErrorHandler().onErrorImpl(lastErrorMessage, th, context);
+                getErrorHandler().onError(lastErrorMessage, th, context);
             }
             return errorCode;
         }
@@ -302,7 +302,7 @@ public class JShell {
         String lastErrorMessage = getErrorHandler().errorToMessage(th);
         context.setLastResult(new JShellResult(errorCode, lastErrorMessage, th));
         if (errorCode != 0) {
-            getErrorHandler().onErrorImpl(lastErrorMessage, th, context);
+            getErrorHandler().onError(lastErrorMessage, th, context);
         }
         return errorCode;
     }
@@ -318,7 +318,7 @@ public class JShell {
         String lastErrorMessage = th == null ? null : getErrorHandler().errorToMessage(th);
         context.setLastResult(new JShellResult(errorCode, lastErrorMessage, th));
         if (errorCode != 0) {
-            getErrorHandler().onErrorImpl(lastErrorMessage, th, context);
+            getErrorHandler().onError(lastErrorMessage, th, context);
         }
         return errorCode;
     }

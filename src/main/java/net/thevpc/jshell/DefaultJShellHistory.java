@@ -30,6 +30,7 @@ public class DefaultJShellHistory extends AbstractJShellHistory {
         }
     }
 
+    @Override
     public void removeDuplicates(){
         LinkedHashSet<String> vals=new LinkedHashSet<>();
         for (String s : history) {
@@ -44,6 +45,7 @@ public class DefaultJShellHistory extends AbstractJShellHistory {
         return new ArrayList<>(history);
     }
 
+    @Override
     public List<String> getElements(int maxElements) {
         if(maxElements<0){
             return new ArrayList<>(history);
